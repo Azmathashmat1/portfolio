@@ -1,0 +1,243 @@
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #b3c1f7;
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    width: 100%;
+    background-color: rgb(194, 194, 235);
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 5px; /* Reduced padding */
+    box-shadow: 0 4px 10px rgba(128, 0, 128, 0.5);
+    position: absolute;
+    top: 0;
+    bottom: auto;
+    justify-content:first baseline
+}
+
+nav {
+    margin-top: 60px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    color: blue;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px; /* Reduced margin */
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+nav ul li:hover {
+    color: rgb(6, 254, 205);
+}
+
+.book-container {
+    width: 600px;
+    height: 400px;
+    border: 2px solid rgb(23, 205, 255);
+    background-color: white;
+    position: relative;
+    perspective: 1000px;
+    margin-top: 80px;
+    box-shadow: 0 4px 10px rgba(128, 0, 128, 0.5);
+}
+
+.page {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.page-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column; /* Stack content */
+    justify-content: center;
+    align-items: center;
+    font-size: 18px; /* Reduced font size */
+    border-right: 1px solid #0a0a0a;
+    backface-visibility: hidden;
+    position: relative; /* For positioning the page number */
+    padding: 10px; /* Reduced padding */
+}
+
+.page-content.left {
+    background-color: #e0f7fa; /* Sea green */
+}
+
+.page-content.right {
+    background-color: #fff;
+}
+
+.page-number {
+    position: absolute;
+    top: 5px; /* Adjusted */
+    right: 5px; /* Adjusted */
+    font-size: 10px; /* Smaller font size */
+    color: gray; /* Color of the number */
+}
+
+.hidden {
+    display: none;
+}
+
+.turn-right {
+    transform: rotateY(-180deg);
+}
+
+.turn-left {
+    transform: rotateY(180deg);
+}
+
+.social-links {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0; /* Added margin */
+}
+
+.social-links li {
+    display: inline;
+    margin: 0 5px; /* Reduced margin */
+}
+
+.social-links a {
+    text-decoration: none;
+    color: blue;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: lightgreen;
+}
+
+.project-cube {
+    width: 40px; /* Reduced cube size */
+    height: 40px;
+    background-color: lightgray;
+    display: inline-block;
+    margin: 5px; /* Reduced margin */
+    transition: background-color 0.3s;
+}
+
+.project-cube:hover {
+    background-color: lightblue;
+}
+
+.buttons {
+    position: absolute;
+    bottom: 10px; /* Adjusted position */
+    display: flex;
+    justify-content: center;
+    gap: 5px; /* Reduced gap */
+}
+
+button {
+    padding: 5px 10px; /* Reduced button size */
+    font-size: 12px; /* Reduced button text size */
+    background-color: rgb(59, 81, 250);
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: rgb(159, 126, 236);
+}
+
+
+/* Remove default list styling */
+.social-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 15px;  /* Space between the icons */
+    justify-content: center;  /* Center align the icons horizontally */
+    margin: 0;  /* Remove default margin */
+}
+
+.social-links li {
+    display: inline-block;
+}
+
+/* Style for the circular icons */
+.social-links a {
+    display: flex;
+    justify-content: center;  /* Center the icon inside the circle */
+    align-items: center;      /* Center the icon inside the circle */
+    width: 50px;              /* Width of the circle */
+    height: 50px;             /* Height of the circle */
+    border-radius: 50%;       /* Make the shape circular */
+    color: rgb(0, 0, 0);             /* Default icon color */
+    text-decoration: none;    /* Remove underline from link */
+    font-size: 24px;          /* Icon size */
+    transition: background-color 0.3s, color 0.3s; /* Smooth color change on hover */
+}
+
+/* Specific background colors for each social link */
+.social-links a.linkedin {
+    background-color: cyan;  /* LinkedIn Blue */
+}
+
+.social-links a.github {
+    background-color:cyan;    /* GitHub Black */
+}
+
+.social-links a.twitter {
+    background-color: cyan; /* Twitter Blue */
+}
+
+.social-links a.facebook {
+    background-color: cyan; /* Facebook Blue */
+}
+
+/* Hover effect: change background color and icon color */
+.social-links a:hover {
+    background-color: rgb(3, 141, 255);  /* Background color on hover */
+    color: blue;  /* Icon color on hover */
+}
+
+/* Font Awesome icon size */
+.social-links a i {
+    font-size: 24px;  /* Icon size */
+}
+
+
+.body .h3 .h2{
+    justify-content: space-between;
+    display: flex;
+    padding: 2px;
+    margin: 2px;
+}
+.profile-container {
+    display: flex;
+    justify-content: center;  /* Center the image horizontally */
+    align-items: center;      /* Center the image vertically */
+    height: 100vh;            /* Full height of the viewport */
+    background-color: #f4f4f4; /* Optional background color */
+}
+
+.profile-img {
+    width: 2in;              /* Set the image size to 2 inches */
+    height: 2in;             /* Ensure the image is square */
+    border-radius: 50%;      /* Make the image circular */
+    object-fit: cover;       /* Ensure the image covers the circle area without distortion */
+    border: 3px solid #ccc; /* Optional border around the image */
+}

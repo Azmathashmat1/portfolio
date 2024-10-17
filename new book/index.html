@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flipping Book</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+>
+</head>
+<body>
+    <div class="header">
+        <h2>MUHAMMAD AZMAT</h2>
+        <h4>MY 3D BOOK PORTFOLIO</h4>
+   </div>
+   <div>
+    <nav>
+        <ul>
+            <li data-target="page-1">Home</li>
+            <li data-target="page-2">Skills</li>
+            <li data-target="page-3">Services</li>
+            <li data-target="page-1">Education</li>
+            <li data-target="page-4">Experience</li>
+            <li data-target="page-5">Projects</li>
+            <li data-target="page-8">Contact Me</li>
+        </ul>
+    </nav>
+    </div><br><br>
+    <div class="book-container">
+        <div class="page" id="page-1">
+            <div class="page-content left">
+                <h2>My Profile</h2>
+                <img src="c:\next js\id-card\public\image.png" alt="Profile Picture" class="profile-img">
+                <p>Welcome to my profile!</p>
+                <ul class="social-links">
+
+                    <li><a href="https://www.facebook.com" class="facebook" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="https://www.linkedin.com" class="linkedin" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+                    <li><a href="https://github.com" class="github" target="_blank"><i class="fab fa-github"></i></a></li>
+                    <li><a href="https://twitter.com" class="twitter" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                    
+                </ul>
+                
+                
+                <div class="page-number">1</div>
+            </div>
+            <div class="page-content right">
+                <h2>Education</h2>
+                <p><span class="calendar-icon">📅</span> 2019-2020: BCOM. in COMMERCE</p>
+                <p><span class="calendar-icon">📅</span> 2017-2018: INTERMEDIATE IN COMMERCE</p>
+                <div class="page-number">2</div>
+            </div>
+        </div>
+
+        <div class="page hidden" id="page-2">
+            <div class="page-content left">
+                <h2>Skills</h2>
+                <ul>
+                    <li>HTML <span class="icon">🌐</span></li>
+                    <li>CSS <span class="icon">🎨</span></li>
+                    <li>JavaScript <span class="icon">💻</span></li>
+                    <li>React <span class="icon">⚛️</span></li>
+                    <li>Next.js <span class="icon">📦</span></li>
+                    <li>UI/UX Design <span class="icon">🎨</span></li>
+                </ul>
+                <div class="page-number">3</div>
+            </div>
+            <div class="page-content right">
+                <h2>Experience</h2>
+                <p><span class="icon">🏢</span> Company A: 2021 - Present</p>
+                <p><span class="icon">🏢</span> Company B: 2019 - 2021</p>
+                <div class="page-number">4</div>
+            </div>
+        </div>
+
+        <div class="page hidden" id="page-3">
+            <div class="page-content left">
+                <h2>Projects</h2>
+                <p> 1: Portfolio </p>
+       <p> 2: Resume builder </p>
+        <p >3: website by using Next Js</p>
+            
+             
+            
+                <div class="page-number">5</div>
+            </div>
+            <div class="page-content right">
+                <h2>Services</h2>
+                <p>Service 1: Web Development</p>
+                <p>Service 2: App Development</p>
+                <p>Service 3: UI/UX Design</p>
+                <p>Service 4: SEO Optimization</p>
+                <div class="page-number">6</div>
+            </div>
+        </div>
+
+        <div class="page hidden" id="page-4">
+            <div class="page-content left">
+                <h2>My Info</h2>
+                <p>Email: azmat@example.com</p>
+                <p>Address: 123 Main St.</p>
+                <p>City: KARACHI</p>
+                <p>Country: Country</p>
+         
+               
+                <p>Phone: 123-456-7890</p>
+                <div class="page-number">7</div>
+            </div>
+            <div class="page-content right">
+                <h1>Contact Me</h1>
+                <form>
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea placeholder="Your Message" required></textarea>
+                    <button type="submit">Submit</button>
+                </form>
+                <div class="page-number">8</div>
+            </div>
+        </div>
+
+        <div class="page hidden" id="page-5">
+            <div class="page-content left">
+                <h2>Summary of Pages</h2>
+                <p>1: Profile</p>
+                <p>2: Education</p>
+                <p>3: Skills</p>
+                <p>4: Experience</p>
+                <p>5: Projects</p>
+                <p>6: Services</p>
+            
+                <div class="page-number">9</div>
+            </div>
+            <div class="page-content right">
+                <h2>Thank You!</h2>
+                <p>Thank you for viewing my flipping book!</p>
+                <div class="page-number">10</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="buttons">
+        <button onclick="prevPage()">Previous</button>
+        <button onclick="nextPage()">Next</button>
+    </div>
+    <script>
+        // Your existing JavaScript code
+        document.querySelectorAll('nav ul li').forEach(item => {
+            item.addEventListener('click', event => {
+                const targetPage = event.target.getAttribute('data-target');
+                navigateToPage(targetPage);
+            });
+        });
+        
+        function navigateToPage(targetId) {
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => {
+                page.classList.add('hidden'); // Hide all pages
+            });
+            document.getElementById(targetId).classList.remove('hidden'); // Show the selected page
+        }
+        
+        // Existing page flip functions, etc.
+        </script>
+        
+    <script src="script.js"></script>
+</body>
+</html>
